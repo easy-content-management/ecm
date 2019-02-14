@@ -1,0 +1,3 @@
+
+  # From ECM Tags
+  helper Ecm::Tags::ApplicationHelper

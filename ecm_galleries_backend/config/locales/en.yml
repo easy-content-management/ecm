@@ -1,0 +1,17 @@
+en:
+  classes:
+    ecm/galleries/backend/engine: Pictures
+  routes:
+    ecm-galleries-backend-engine: pictures
+  ecm:
+    galleries:
+      backend:
+        picture_details:
+          destroy_many:
+            success: Success deleting entries.
+        picture_galleries:
+          show_extras:
+            destroy: Delete
+            edit: Edit
+            publish: Publish
+            unpublish: Unpublish

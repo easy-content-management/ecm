@@ -1,0 +1,61 @@
+defaults:
+  permissions:
+    - ecm/rbac/backend/engine
+    - ecm/rbac/permission/index
+    - ecm/rbac/permission/show
+    - ecm/rbac/permission/new
+    - ecm/rbac/permission/create
+    - ecm/rbac/permission/edit
+    - ecm/rbac/permission/update
+    - ecm/rbac/permission/destroy
+    - ecm/rbac/role/index
+    - ecm/rbac/role/show
+    - ecm/rbac/role/new
+    - ecm/rbac/role/create
+    - ecm/rbac/role/edit
+    - ecm/rbac/role/update
+    - ecm/rbac/role/destroy
+    - ecm/rbac/user/index
+    - ecm/rbac/user/show
+    - ecm/rbac/user/new
+    - ecm/rbac/user/create
+    - ecm/rbac/user/edit
+    - ecm/rbac/user/update
+    - ecm/rbac/user/destroy
+    - ecm/rbac/import_default_permissions_service/call
+    - ecm/rbac/import_default_permissions_service/invoke
+  roles:
+    ecm/rbac/administrator:
+      - ecm/rbac/backend/engine
+      - ecm/rbac/permission/index
+      - ecm/rbac/permission/show
+      - ecm/rbac/permission/new
+      - ecm/rbac/permission/create
+      - ecm/rbac/permission/edit
+      - ecm/rbac/permission/update
+      - ecm/rbac/permission/destroy
+      - ecm/rbac/role/index
+      - ecm/rbac/role/show
+      - ecm/rbac/role/new
+      - ecm/rbac/role/create
+      - ecm/rbac/role/edit
+      - ecm/rbac/role/update
+      - ecm/rbac/role/destroy
+      - ecm/rbac/user/index
+      - ecm/rbac/user/show
+      - ecm/rbac/user/new
+      - ecm/rbac/user/create
+      - ecm/rbac/user/edit
+      - ecm/rbac/user/update
+      - ecm/rbac/user/destroy
+      - ecm/rbac/import_default_permissions_service/call
+      - ecm/rbac/import_default_permissions_service/invoke
+    ecm/rbac/reviewer:
+      - ecm/rbac/backend/engine
+      - ecm/rbac/permission/index
+      - ecm/rbac/permission/show
+      - ecm/rbac/role/index
+      - ecm/rbac/role/show
+      - ecm/rbac/user/index
+      - ecm/rbac/user/show
+      - ecm/rbac/import_default_permissions_service/invoke

@@ -1,0 +1,42 @@
+= ECM Lightbox 2 Module
+
+= Installation
+
+Add it to you Gemfile:
+
+    # ./Gemfile
+    gem 'ecm_lightbox2'
+
+Generate the initializer:
+
+    $ rails g ecm:lightbox:install
+
+Add the javascripts to your assets:
+
+    # ./app/assets/javascripts/application.js
+    //= require ecm_lightbox
+    
+Add the stylesheets to your assets:
+
+    # ./app/assets/stylesheets/application.css
+    /*
+     *= require ecm_lightbox
+     */
+
+Add the Helper to your ApplicationController:
+
+    # ./app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      helper Ecm::LightboxHelper
+    end
+
+Add a call to the modal_gallery helper to your layout:
+
+  # app/views/layouts/application.html.erb:
+  <%= modal_gallery %>
+
+
+= License
+
+This project rocks and uses MIT-LICENSE.
+

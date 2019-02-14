@@ -1,0 +1,40 @@
+defaults:
+  permissions:
+    - ecm/links/backend/engine
+    - ecm/links/category/index
+    - ecm/links/category/show
+    - ecm/links/category/new
+    - ecm/links/category/create
+    - ecm/links/category/edit
+    - ecm/links/category/update
+    - ecm/links/category/destroy
+    - ecm/links/link/index
+    - ecm/links/link/show
+    - ecm/links/link/new
+    - ecm/links/link/create
+    - ecm/links/link/edit
+    - ecm/links/link/update
+    - ecm/links/link/destroy
+  roles:
+    ecm/links/administrator:
+      - ecm/links/backend/engine
+      - ecm/links/category/index
+      - ecm/links/category/show
+      - ecm/links/category/new
+      - ecm/links/category/create
+      - ecm/links/category/edit
+      - ecm/links/category/update
+      - ecm/links/category/destroy
+      - ecm/links/link/index
+      - ecm/links/link/show
+      - ecm/links/link/new
+      - ecm/links/link/create
+      - ecm/links/link/edit
+      - ecm/links/link/update
+      - ecm/links/link/destroy
+    ecm/links/reviewer:
+      - ecm/links/backend/engine
+      - ecm/links/category/index
+      - ecm/links/category/show
+      - ecm/links/link/index
+      - ecm/links/link/show

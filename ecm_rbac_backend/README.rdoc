@@ -1,0 +1,35 @@
+= Ecm::Rbac::Backend
+
+This gem implements a backend for the ecm_rbac gem.
+
+
+= Why?
+
+  * Beautiful backend to edit your permissions.
+
+
+= Installation
+
+Add it to your gemfile, bundle and run installer:
+
+    echo "\ngem 'ecm_rbac_backend'" >> Gemfile
+    bundle
+    rails g ecm:rbac:backend:install
+
+The installer will
+
+  * add an initializer with configuration options in initializers/ecm_rbac_backend.rb.
+  * add a routing entry to mount the engine.
+
+
+= Configuration
+
+
+= Usage
+
+Open your browser and visit http://your-app/en/backend/ecm/rbac
+
+
+= License
+
+This project rocks and uses MIT-LICENSE.

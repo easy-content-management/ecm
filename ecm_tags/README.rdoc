@@ -1,0 +1,22 @@
+= Ecm::Tags
+
+= Installation
+
+Add it to your gemfile:
+
+  # Gemfile
+  gem 'ecm_tags'
+
+Add migrations:
+
+  $ rake ecm_tags:install:migrations
+
+Migrate:
+
+  $ rake db:migrate
+
+
+= How do I run tests?
+
+  $ RAILS_ENV=test rake db:migrate
+  $ guard

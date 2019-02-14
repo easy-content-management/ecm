@@ -1,0 +1,9 @@
+= table.awesome_nested_set_actions scope: ->(navigation_item) { navigation_item.root.ecm_cms_navigation.to_param }
+= table.association(:ecm_cms_navigation, sort: { column_name: 'ecm_cms_navigations.name'}, link_to: ->(navigation_item) { navigation_path(navigation_item.ecm_cms_navigation) })
+= table.column(:name, sort: true) do |navigation_item|
+  - capture_haml do
+    %span{ class: "indent indent-chars-#{navigation_item.depth * 3}"}= navigation_item.name
+= table.column :url, sort: true
+= table.column(:ecm_cms_page, sort: { column_name: 'ecm_cms_pages.title' }) do |navigation_item|
+  - link_to navigation_item.ecm_cms_page.title, page_path(navigation_item.ecm_cms_page) if navigation_item.ecm_cms_page.present?
+= table.timestamps(sort: true)

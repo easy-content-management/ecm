@@ -1,0 +1,3 @@
+= bootstrap_carousel(autostart: slider.auto_start, interval: slider.interval_in_milliseconds, id: dom_id(slider)) do |c|
+  - slider.items.each do |item|
+    - c.add_item(image_source: main_app.url_for(item.image.variant(resize: Ecm::Sliders::Configuration.item_image_styles[:slider])), caption: mu(item, :body))

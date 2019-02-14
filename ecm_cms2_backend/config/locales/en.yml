@@ -1,0 +1,5 @@
+en:
+  classes:
+    ecm/cms/backend/engine: 'CMS'
+  routes:
+    ecm-cms-backend-engine: 'cms'

@@ -1,0 +1,13 @@
+en:
+  ecm:
+    contact:
+      backend:
+        contact_requests:
+          notify:
+            success: 'The notification was sent.'
+          table:
+            notify: 'Resend notification'
+  classes:
+    ecm/contact/backend/engine: Contact
+  routes:
+    ecm-contact-backend-engine: 'contact'

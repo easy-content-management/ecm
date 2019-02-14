@@ -1,0 +1,21 @@
+- if @resource.respond_to?(:roles)
+  .panel.panel-default
+    .panel-heading
+      .panel-title= Ecm::Rbac::Role.model_name.human(count: :other)
+    %table.table.table-striped.table-condensed.table-hover
+      = render_collection(@resource.roles, Ecm::Rbac::Role, as: :bootstrap_table) do |table, record|
+        = table.column :identifier
+        = table.column :actions do |resource|
+          = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
+    .panel-footer
+
+- if @resource.respond_to?(:permissions)
+  .panel.panel-default
+    .panel-heading
+      .panel-title= Ecm::Rbac::Permission.model_name.human(count: :other)
+    %table.table.table-striped.table-condensed.table-hover
+      = render_collection(@resource.permissions, Ecm::Rbac::Permission, as: :bootstrap_table) do |table, record|
+        = table.column :identifier
+        = table.column :actions do |resource|
+          = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
+    .panel-footer

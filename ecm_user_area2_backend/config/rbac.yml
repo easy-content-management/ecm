@@ -1,0 +1,29 @@
+defaults:
+  permissions:
+    - ecm/user_area/backend/engine
+    - ecm/user_area/user/index
+    - ecm/user_area/user/show
+    - ecm/user_area/user/new
+    - ecm/user_area/user/create
+    - ecm/user_area/user/edit
+    - ecm/user_area/user/update
+    - ecm/user_area/user/destroy
+    - ecm/user_area/create_default_user_service/call
+    - ecm/user_area/create_default_user_service/invoke
+  roles:
+    ecm/user_area/administrator:
+      - ecm/user_area/backend/engine
+      - ecm/user_area/user/index
+      - ecm/user_area/user/show
+      - ecm/user_area/user/new
+      - ecm/user_area/user/create
+      - ecm/user_area/user/edit
+      - ecm/user_area/user/update
+      - ecm/user_area/user/destroy
+      - ecm/user_area/create_default_user_service/call
+      - ecm/user_area/create_default_user_service/invoke
+    ecm/user_area/reviewer:
+      - ecm/user_area/backend/engine
+      - ecm/user_area/user/index
+      - ecm/user_area/user/show
+      - ecm/user_area/create_default_user_service/invoke

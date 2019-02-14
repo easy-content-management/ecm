@@ -1,0 +1,37 @@
+= Ecm::Rbac
+
+This module implements role based access control on top of pundit.
+
+
+= Why?
+
+  * Flexible handling of roles, role permissions, permissions and user permissions in the database.
+  * Automatic mapping of controllers and actions to permissions.
+
+
+= Installation
+
+Add it to your gemfile, bundle and run installer:
+
+    echo "\ngem 'ecm_rbac'" >> Gemfile
+    bundle
+    rails g ecm:rbac:install
+
+The installer will add an initializer with configuration options in initializers/ecm_rbac.rb
+
+Add the database migrations and migrate:
+
+    rake ecm_rbac:install:migrations
+    rake db:migrate
+
+
+= Configuration
+
+Possible options in the initializer:
+
+  * user_class_name: The class of the user model. Default is User.
+
+
+= License
+
+This project rocks and uses MIT-LICENSE.

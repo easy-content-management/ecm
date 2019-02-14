@@ -1,0 +1,11 @@
+de:
+  classes:
+    ecm/tags/backend/engine: Tagging
+  ecm:
+    tags:
+      backend:
+        taggings:
+          create_by_gid_and_tag:
+            success: 'Tag hinzugefügt'
+  routes:
+    ecm-tags-backend-engine: 'tags'

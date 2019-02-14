@@ -1,0 +1,10 @@
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" <%= Ecm::Lightbox::Configuration.options_as_data_attributes.map { |k,v| "#{k}=\"#{v}\"" }.join(" ").html_safe %>>
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>

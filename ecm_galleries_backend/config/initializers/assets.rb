@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( ecm_galleries_backend.css ecm_galleries_backend.js )

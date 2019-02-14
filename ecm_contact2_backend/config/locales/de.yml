@@ -1,0 +1,14 @@
+de:
+  ecm:
+    contact:
+      backend:
+        contact_requests:
+          notify:
+            success: 'Benachrichtigung erneut versandt.'
+          table:
+            notify: 'Erneut benachrichtigen'
+
+  classes:
+    ecm/contact/backend/engine: Kontakt
+  routes:
+    ecm-contact-backend-engine: 'kontakt'

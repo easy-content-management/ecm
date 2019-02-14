@@ -1,0 +1,5 @@
+= table.acts_as_list_actions scope: :slider_id
+= table.association :slider, label_method: :human, link_to: ->(resource) { url_for([resource.slider]) }, sort: { column_name: :'ecm_sliders_sliders.name' }
+= table.column :image do |resource|
+  - image_tag(main_app.url_for(resource.image.variant(resize: Ecm::Sliders::Configuration.item_image_styles[:medium_thumb])))
+= table.timestamps(format: :short, sort: true)

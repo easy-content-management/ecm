@@ -1,0 +1,14 @@
+en:
+  classes:
+    ecm/links/backend/engine: 'Links'
+  component:
+    collection_table:
+      visit: 'Visit'
+  ecm:
+    links:
+      backend:
+        links:
+          table:
+            visit: Open link
+  routes:
+    ecm-links-backend-engine: 'links'

@@ -1,0 +1,4 @@
+  
+  # From ECM User Area
+  include Controller::RedirectBackConcern
+  include Controller::CurrentUserConcern

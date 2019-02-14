@@ -1,0 +1,1 @@
+//= require ecm/user_area/backend/application

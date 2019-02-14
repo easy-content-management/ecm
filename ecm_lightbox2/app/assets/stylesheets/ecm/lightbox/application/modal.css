@@ -1,0 +1,12 @@
+#modal-gallery .modal-footer {
+  text-align: center;
+}
+
+#modal-gallery .modal-prev {
+  margin-right: 10px;
+}
+
+#modal-gallery .modal-next {
+  margin-left: 15px;
+}
+

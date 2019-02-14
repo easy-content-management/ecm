@@ -1,0 +1,40 @@
+defaults:
+  permissions:
+    - ecm/tags/backend/engine
+    - ecm/tags/taggings/index
+    - ecm/tags/taggings/show
+    - ecm/tags/taggings/new
+    - ecm/tags/taggings/create
+    - ecm/tags/taggings/edit
+    - ecm/tags/taggings/update
+    - ecm/tags/taggings/destroy
+    - ecm/tags/tags/index
+    - ecm/tags/tags/show
+    - ecm/tags/tags/new
+    - ecm/tags/tags/create
+    - ecm/tags/tags/edit
+    - ecm/tags/tags/update
+    - ecm/tags/tags/destroy
+  roles:
+    ecm/tags/administrator:
+      - ecm/tags/backend/engine
+      - ecm/tags/taggings/index
+      - ecm/tags/taggings/show
+      - ecm/tags/taggings/new
+      - ecm/tags/taggings/create
+      - ecm/tags/taggings/edit
+      - ecm/tags/taggings/update
+      - ecm/tags/taggings/destroy
+      - ecm/tags/tags/index
+      - ecm/tags/tags/show
+      - ecm/tags/tags/new
+      - ecm/tags/tags/create
+      - ecm/tags/tags/edit
+      - ecm/tags/tags/update
+      - ecm/tags/tags/destroy
+    ecm/tags/reviewer:
+      - ecm/tags/backend/engine
+      - ecm/tags/taggings/index
+      - ecm/tags/taggings/show
+      - ecm/tags/tags/index
+      - ecm/tags/tags/show

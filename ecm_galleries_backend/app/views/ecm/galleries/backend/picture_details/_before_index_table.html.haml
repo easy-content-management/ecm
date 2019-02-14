@@ -1,0 +1,5 @@
+= query_helper(self).form_for(collection, url: collection_path, method: :get, html: { class: 'form-inline' }) do |f|
+  = f.input :title_cont
+  = f.input :name_cont, association: :picture_gallery
+  = f.submit nil, class: 'btn btn-primary'
+  = f.reset  nil, class: 'btn btn-default'

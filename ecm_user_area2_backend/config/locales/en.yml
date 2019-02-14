@@ -1,0 +1,8 @@
+en:
+  classes:
+    ecm/user_area/backend/engine: Authentication
+  activerecord:
+    scopes:
+      never_signed_in: Never signed in
+  routes:
+    ecm-user-area-backend-engine: 'authentication'

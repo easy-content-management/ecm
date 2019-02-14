@@ -1,0 +1,140 @@
+de:
+  activerecord:
+    models:
+      ecm/cms/page/content_block:
+        one: Content Block
+        other: Content Blöcke
+      ecm/cms/content_box:
+        one: Content Box
+        other: Content Boxen
+      ecm/cms/navigation:
+        one: Navigation
+        other: Navigationen
+      ecm/cms/navigation_item:
+        one: Navigationseintrag
+        other: Navigationseinträge
+      ecm/cms/page:
+        one: Seite
+        other: Seiten
+      ecm/cms/partial:
+        one: Fragment
+        other: Fragmente
+      ecm/cms/template:
+        one: Vorlage
+        other: Vorlagen
+    attributes:
+      ecm/cms/page/content_block:
+        id: ID
+        body: Inhalt
+        ecm_cms_page: Seite
+        ecm_cms_page_id: Seite
+        ecm_cms_content_box: Content Box
+        ecm_cms_content_box_id: Content Box
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/cms/content_box:
+        id: ID
+        name: Name
+        body: Inhalt
+        ecm_cms_page_content_blocks: Content Blöcke
+        ecm_cms_page_content_blocks_count: Content Blöcke
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/cms/navigation:
+        id: ID
+        created_at: Erstellt am
+        ecm_cms_navigation_items: Navigationseinträge
+        ecm_cms_navigation_items_count: Navigationseinträge
+        locale: Sprache
+        name: Name
+        slug: Freundliche ID
+        updated_at: Aktualisiert am
+      ecm/cms/navigation_item:
+        id: ID
+        children_count: Unterelemente
+        data_add_icon: Symbol
+        depth: Baumtiefe
+        ecm_cms_navigation: Navigation
+        ecm_cms_navigation_id: Navigation
+        ecm_cms_page: Seite
+        ecm_cms_page_id: Seite
+        highlights_on: Hervorgehoben bei
+        key: Schlüssel
+        lft: Links
+        li_attributes: 'Listen-Element Attribute'
+        name: Name
+        options: Optionen
+        parent: Untereintrag von
+        parent_id: Untereintrag von
+        properties: Eigenschaften
+        rgt: Rechts
+        slug: Freundliche ID
+        url: Ziel-URL
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/cms/page:
+        id: ID
+        basename: Name
+        body: Inhalt
+        ecm_cms_folder_id: Ordner
+        ecm_cms_folder: Ordner
+        ecm_cms_navigation_items: Verlinkt von
+        ecm_cms_navigation_item_ids: Verlinkt von
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        meta_description: Meta Beschreibung
+        path_and_filename: Dateipfad
+        pathname: Pfad
+        title: Titel
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/cms/partial:
+        id: ID
+        basename: Name
+        body: Inhalt
+        ecm_cms_folder_id: Ordner
+        ecm_cms_folder: Ordner
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        pathname: Pfad
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/cms/template:
+        id: ID
+        basename: Name
+        body: Inhalt
+        ecm_cms_folder_id: Ordner
+        ecm_cms_folder: Ordner
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        pathname: Pfad
+        created_at: Erstellt am
+        updated_at: Aktualsiert am
+  classes:
+    ecm/cms/add_homepages_service: 'Dienst zum hinzufügen von Homepages'
+    ecm/cms/import_partials_service: 'Dienst zum importieren von Fragmenten'
+  ecm:
+    cms:
+      active_admin:
+        menu: CMS
+      navigation:
+        messages:
+          empty: Navigation  %{name} (%{lang}) ist leer
+          not_found: Navigation %{name} (%{lang}) nicht gefunden
+  resources:
+    ecm_cms_folders: ordner
+    ecm_cms_navigations: navigationen
+    ecm_cms_navigation_items: navigationseintraege
+    ecm_cms_pages: seiten
+    ecm_cms_partials: fragmente
+    ecm_cms_templates: vorlagen    
+

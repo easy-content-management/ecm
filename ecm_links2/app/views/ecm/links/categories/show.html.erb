@@ -1,0 +1,9 @@
+<%= render @category %>
+
+<div class="well">
+<% if @category.root? %>
+  <%= link_to(t('ecm.links.category.actions.back_to_index'), ecm_links.categories_path, class: 'btn btn-default') if respond_to?(:ecm_links_categories_path) %>
+<% else %>
+  <%= link_to(Ecm::Links::Category.human_attribute_name(:parent), @category.parent, class: 'btn btn-default') %>
+<% end %>
+</div>

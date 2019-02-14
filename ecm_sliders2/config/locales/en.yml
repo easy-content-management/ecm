@@ -1,0 +1,52 @@
+en:
+  activerecord:
+    models:
+      ecm/sliders/item:
+        one: slider item
+        other: slider items
+      ecm/sliders/slider:
+        one: slider
+        other: sliders
+    attributes:
+      ecm/sliders/item:
+        id: ID
+        body: body
+        created_at: created at
+        markup_language: Markup language
+        image: Bild
+        image_content_type: image filetype
+        image_file_name: imagte filename
+        image_file_size: image filesize
+        image_fingerprint: image fingerprint
+        image_updated_at: image updated at
+        position: position
+        slider: Slider
+        slider_id: Slider
+        slug: Slug
+        updated_at: updated at
+        url: url
+      ecm/sliders/slider:
+        id: ID
+        auto_start: auto start
+        created_at: created at
+        description: description
+        items: slider items
+        items_count: slider items
+        locale: locale
+        name: name
+        interval: interval
+        slug: friendly id
+        updated_at: updated at
+  resources:
+    ecm_sliders_items: slider-items
+    ecm_sliders_sliders: sliders
+  ecm:
+    sliders:
+      item:
+        actions:
+          more: more
+      slider:
+        warnings:
+          not_found: Could not find slider %{name}
+  routes:
+    ecm_sliders_engine: sliders

@@ -1,0 +1,6 @@
+.row
+  .col-lg-12
+    = collection_table(collection: resource.items, resource_class: Ecm::Sliders::Item) do |table|
+      = table.column :image do |resource|
+        - image_tag(main_app.url_for(resource.image.variant(resize: Ecm::Sliders::Configuration.item_image_styles[:medium_thumb])))
+      = table.timestamps(format: :short)

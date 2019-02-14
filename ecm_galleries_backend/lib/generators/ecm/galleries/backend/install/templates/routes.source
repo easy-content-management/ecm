@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Ecm::Galleries::Backend::Engine, at: '/backend/ecm-galleries-backend-engine'
+  end
