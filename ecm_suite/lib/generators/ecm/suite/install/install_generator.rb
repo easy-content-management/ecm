@@ -27,13 +27,13 @@ module Ecm
         end
 
         def run_frontend_generators
-          %w(cms contact core files galleries lightbox links rbac sliders tags).each do |m|
+          %w(core cms contact files galleries lightbox links rbac sliders tags).each do |m|
             generate "ecm:#{m}:install"
           end
         end
         
         def run_backend_generators
-          %w(cms contact core files galleries links rbac sliders tags user_area).each do |m|
+          %w(core cms contact files galleries links rbac sliders tags user_area).each do |m|
             generate "ecm:#{m}:backend:install"
           end
         end
