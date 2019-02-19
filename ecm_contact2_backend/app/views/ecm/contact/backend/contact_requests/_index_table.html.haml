@@ -7,6 +7,7 @@
 = table.column :notified_at, sort: true
 = table.timestamps(format: :short, sort: true)
 = table.column :additional_actions do |resource|
-  - link_to({ action: :notify, id: resource.to_param}, method: :post, class: 'btn btn-xs btn-default') do
+  - link_to({ action: :notify, id: resource.to_param}, method: :post, class: 'btn btn-xs btn-sm btn-default btn-primary') do
     %span.glyphicon.glyphicon-envelope
+    %span.fas.fa-envelope
     %span.btn-text= t('ecm.contact.backend.contact_requests.table.notify')
