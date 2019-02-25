@@ -1,0 +1,5 @@
+de:
+  classes:
+    ecm/blog/backend/engine: Blog
+  routes:
+    ecm-blog-backend-engine: 'blog'

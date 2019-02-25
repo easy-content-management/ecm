@@ -1,0 +1,1 @@
+//= require ecm/blog/backend/application

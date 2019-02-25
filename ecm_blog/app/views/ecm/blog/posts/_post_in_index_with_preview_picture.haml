@@ -1,0 +1,20 @@
+%div{ id: dom_id(post), class: "row #{dom_class(post)} bottom-margin-5" }
+  .col-lg-4
+    = image_tag(main_app.url_for(post.preview_picture.asset.variant(Ecm::Blog::Configuration.preview_picture_asset_variant_options)), class: 'img-fluid')
+  .col-lg-8
+    %h2.post-title
+      = link_to(post.title, ecm_blog.url_for(post))
+    %small
+      %span.post-creation-information.text-muted
+        = "#{l(post.created_at)} | #{post.creator.try(:human)}"
+      - if Ecm::Blog.features?(:ecm_comments)
+        |
+        %span.comments-information
+          = link_to(t('ecm.comments.commentable.comments_information', comments_count: post.comments.count), ecm_blog.post_url(post, anchor: 'comments'))
+      - if Ecm::Blog.features?(:ecm_tags)
+        |
+        %span.post-tags
+          = tag_labels_for(post)
+
+    .post-body.truncate-lines-3
+      = post.body(format: :html).html_safe

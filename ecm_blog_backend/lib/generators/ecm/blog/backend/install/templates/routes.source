@@ -1,0 +1,4 @@
+
+  localized do
+    mount Ecm::Blog::Backend::Engine, at: '/backend/ecm-blog-backend-engine'
+  end
