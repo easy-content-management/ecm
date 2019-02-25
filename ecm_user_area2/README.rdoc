@@ -37,8 +37,8 @@ Add routes:
 Add current_user helpers to your application controller:
 
   # app/controllers/application_controller.rb
-  include Controller::RedirectBackConcern
-  include Controller::CurrentUserConcern
+  include Ecm::UserArea::Controller::RedirectBackConcern
+  include Ecm::UserArea::Controller::CurrentUserConcern
 
 
 = Usage
@@ -54,7 +54,7 @@ When you visit any controller actions, you will be redirected to the sign in for
 = Adding helper methods
 
   # app/controllers/application_controller.rb
-  include Controller::CurrentUserConcern
+  include Ecm::UserArea::Controller::CurrentUserConcern
 
 This gives you #current_user_session, #current_user, user_signed_in?
 

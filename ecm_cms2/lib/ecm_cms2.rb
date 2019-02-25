@@ -4,6 +4,7 @@ require 'ecm/cms/action_view/template_renderer_patch'
 
 require 'awesome_nested_set'
 require 'rao-service'
+require 'rao-view_helper'
 require 'redcloth'
 require 'simple-navigation'
 require 'coffee-rails'

@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts_as_markup'
   s.add_dependency 'friendly_id'
   s.add_dependency 'mini_magick'
+  s.add_dependency 'twitter-bootstrap-components-rails'
   s.add_dependency 'rails'
   s.add_dependency 'ecm_core', '>= 0.4.0'
 

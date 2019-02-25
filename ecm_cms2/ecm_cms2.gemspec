@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'awesome_nested_set'
   s.add_dependency 'draper'
   s.add_dependency 'rao-service'
+  s.add_dependency 'rao-view_helper'
   s.add_dependency 'RedCloth'
   s.add_dependency 'simple-navigation', '>= 4.0.0'
   s.add_dependency 'coffee-rails'
