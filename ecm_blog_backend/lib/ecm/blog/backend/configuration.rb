@@ -23,7 +23,6 @@ module Ecm
           end
         end
 
-        mattr_accessor(:creator_label_method) { :to_s }
         mattr_accessor(:current_user_proc) { ->(controller) { controller.current_user } }
       end
     end

@@ -1,8 +1,8 @@
 .bottom-margin-1
-  = "#{Ecm::Blog::Post.human_attribute_name(:creator)}: #{administrador_helper(self).resource_label_for(form.object.creator)}"
+  = "#{Ecm::Blog::Post.human_attribute_name(:creator)}: #{form.object.creator.send(Ecm::Blog::Configuration.creator_label_method_name) }"
 
 = form.input :title
 = form.input :body
 = form.input :published, as: :boolean
-= form.input :tag_list
+= form.input :tag_list if Ecm::Blog.features?(:ecm_tags)
 = form.input :assets, as: :file, input_html: { multiple: true }

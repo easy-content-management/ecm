@@ -14,6 +14,7 @@ module Ecm
       mattr_accessor(:posts_index_page_title_proc) { ->(view) { view.resource_class.model_name.human(count: :other) } }
       mattr_accessor(:pagination_options_proc) { ->(view) { { theme: 'twitter-bootstrap-3' } } }
       mattr_accessor(:preview_picture_asset_variant_options) { { resize: '320x240' } }
+      mattr_accessor(:creator_label_method_name) { :to_s }
       mattr_accessor(:features) { {} }
       def enable_feature(name, options = {})
         @@features[name] = Ecm::Blog::Feature.new(name, options)

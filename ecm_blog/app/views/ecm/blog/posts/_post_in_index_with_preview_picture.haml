@@ -1,4 +1,4 @@
-%div{ id: dom_id(post), class: "row #{dom_class(post)} bottom-margin-5" }
+%div{ id: dom_id(post), class: "row #{dom_class(post)} bottom-margin-5 mb-4" }
   .col-lg-4
     = image_tag(main_app.url_for(post.preview_picture.asset.variant(Ecm::Blog::Configuration.preview_picture_asset_variant_options)), class: 'img-fluid')
   .col-lg-8
@@ -6,7 +6,7 @@
       = link_to(post.title, ecm_blog.url_for(post))
     %small
       %span.post-creation-information.text-muted
-        = "#{l(post.created_at)} | #{post.creator.try(:human)}"
+        = "#{l(post.created_at)} | #{post.creator.send(Ecm::Blog::Configuration.creator_label_method_name)}"
       - if Ecm::Blog.features?(:ecm_comments)
         |
         %span.comments-information

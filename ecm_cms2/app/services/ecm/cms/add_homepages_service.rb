@@ -20,11 +20,10 @@ module Ecm::Cms
     end
 
     def _perform
-      say "Environment: #{Rails.env}"
       create_homepages
-      warn("Skipped #{@already_existent_pages.size} already existent pages for locales: #{@already_existent_pages.map(&:locale).join(', ')}", indent: 1) if @already_existent_pages.any?
-      info("Added #{@created_pages.size} new home pages for locales: #{@created_pages.map(&:locale).join(', ')}", indent: 1)
-      warn("Failed adding #{@failed_pages.size} new home pages for locales: #{@failed_pages.map(&:locale).join(', ')}", indent: 1) if @failed_pages.any?
+      warn("Skipped #{@already_existent_pages.size} already existent pages for locales: #{@already_existent_pages.map(&:locale).join(', ')}") if @already_existent_pages.any?
+      info("Added #{@created_pages.size} new home pages for locales: #{@created_pages.map(&:locale).join(', ')}")
+      warn("Failed adding #{@failed_pages.size} new home pages for locales: #{@failed_pages.map(&:locale).join(', ')}") if @failed_pages.any?
 
     end
 
@@ -40,11 +39,11 @@ module Ecm::Cms
 
     def create_homepages
       @all_pages = @locales.collect do |locale|
-        say "Adding homepage for locale #{locale}", indent: 1
+        say "Adding homepage for locale #{locale}"
         page = Ecm::Cms::Page.where(locale: locale, pathname: '/', basename: 'home', handler: 'textile').first_or_initialize
         unless page.new_record?
           @already_existent_pages << page
-          warn "already exists", indent: 2
+          warn "already exists"
           next page
         end 
         page.tap do |page|
@@ -58,7 +57,7 @@ module Ecm::Cms
         end
         if page.save
           @created_pages << page
-          info "done", indent: 1
+          info "done"
         else
           @failed_pages << page
           errors << page.errors

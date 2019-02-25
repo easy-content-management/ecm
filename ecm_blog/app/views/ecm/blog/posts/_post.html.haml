@@ -3,7 +3,7 @@
     = link_to(post.title, ecm_blog.url_for(post))
   %small
     %span.post-creation-information.text-muted
-      = "#{l(post.created_at)} | #{post.creator.try(:human)}"
+      = "#{l(post.created_at)} | #{post.creator.send(Ecm::Blog::Configuration.creator_label_method_name)}"
     - if Ecm::Blog.features?(:ecm_comments)
       |
       %span.comments-information
@@ -19,7 +19,7 @@
     .row
       - post.asset_details.images.order(position: :asc).each do |picture_detail|
         .col-lg-4.d-flex.align-items-stretch
-          = bootstrap_card(additional_css_classes: 'text-center border-0') do
+          = bootstrap_helper(self).card(additional_css_classes: 'text-center border-0') do
             %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(post) } }
               %img{ src: main_app.url_for(picture_detail.asset.variant(Ecm::Blog::Configuration.preview_picture_asset_variant_options)) }
             .card-body

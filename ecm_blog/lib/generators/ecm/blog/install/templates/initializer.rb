@@ -47,4 +47,10 @@ Ecm::Blog.configure do |config|
   # Enables the Ecm::Tags integration
   #
   # config.enable_feature :ecm_tags, {}
+
+  # Method to call on creator for display.
+  #
+  # default: config.creator_label_method_name = :to_s
+  #
+  config.creator_label_method_name = :to_s
 end

@@ -9,7 +9,7 @@ module Ecm::Blog
 
     # positioning
     acts_as_list
-    default_scope { order(position: :asc) }
+    default_scope { order(position: :desc) }
 
     # assets
     has_many_attached :assets if respond_to?(:has_many_attached)
