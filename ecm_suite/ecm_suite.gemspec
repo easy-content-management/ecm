@@ -18,6 +18,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails'
   s.add_dependency 'ecm'
 
+  s.add_dependency 'ecm_blog'
+  s.add_dependency 'ecm_blog_backend'
+
+  s.add_dependency 'ecm_carousels'
+  s.add_dependency 'ecm_carousels_backend'
+
   s.add_dependency 'ecm_cms2'
   s.add_dependency 'ecm_cms2_backend'
 
@@ -30,16 +36,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'ecm_galleries'
   s.add_dependency 'ecm_galleries_backend'
 
-  s.add_dependency 'ecm_lightbox2'
-
   s.add_dependency 'ecm_links2'
   s.add_dependency 'ecm_links2_backend'
 
   s.add_dependency 'ecm_rbac'
   s.add_dependency 'ecm_rbac_backend'
-
-  s.add_dependency 'ecm_sliders2'
-  s.add_dependency 'ecm_sliders2_backend'
 
   s.add_dependency 'ecm_tags'
   s.add_dependency 'ecm_tags_backend'
@@ -48,12 +49,17 @@ Gem::Specification.new do |s|
   s.add_dependency 'ecm_user_area2_backend'
 
   s.add_development_dependency 'sqlite3', "~> 1.3.6"
-  s.add_development_dependency 'puma'
-  s.add_development_dependency 'pry-rails'
-  s.add_development_dependency 'i18n-debug'
-  s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'guard-rspec'
-  s.add_development_dependency 'guard-bundler'
+
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'factory_bot_rails'
   s.add_development_dependency 'git_log_generator'
+  s.add_development_dependency 'guard-bundler'
+  s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'i18n-debug'
+  s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'puma'
   s.add_development_dependency 'rails-dummy'
+  s.add_development_dependency 'rao-shoulda_matchers'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'simplecov'
 end

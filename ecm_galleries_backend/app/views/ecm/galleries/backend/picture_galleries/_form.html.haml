@@ -1,5 +1,5 @@
 = form.input :name
-- if form.object.new_record?
+- if form.object.assets.empty?
   = form.input :assets, as: :file, input_html: { multiple: true }
 - else
   .row.mb-4

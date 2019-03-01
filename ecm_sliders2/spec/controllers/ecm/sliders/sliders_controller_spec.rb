@@ -5,7 +5,7 @@ module Ecm
     describe SlidersController do
       describe "GET index" do
         before(:each) do
-          @sliders = FactoryGirl.create_list(:ecm_sliders_slider, 2)
+          @sliders = FactoryBot.create_list(:ecm_sliders_slider, 2)
         end
         
         it "has a 200 status code" do

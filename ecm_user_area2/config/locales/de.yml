@@ -43,17 +43,23 @@ de:
     ecm/user_area/create_default_user_service: 'Dienst zum Erstellen eines Standard-Benutzers'
   ecm:
     user_area:
-      navigation: &navigation
-        show: Mein Account
-        new: Registrieren
-        not_signed_in: Nicht angemeldet
-        sign_in: Einloggen
-        sign_out: Ausloggen
-      navigation_dropdown:
-        bootstrap3:
-          <<: *navigation
-        bootstrap4:
-          <<: *navigation
+      navigation_view_helper:
+        defaults: &navigation_view_helper_defaults
+          show: Mein Account
+          new: Registrieren
+          not_signed_in: Nicht angemeldet
+          sign_in: Einloggen
+          sign_out: Ausloggen
+        bootstrap_3:
+          render:
+            <<: *navigation_view_helper_defaults
+          render_dropdown:
+            <<: *navigation_view_helper_defaults
+        bootstrap_4:
+          render:
+            <<: *navigation_view_helper_defaults
+          render_dropdown:
+            <<: *navigation_view_helper_defaults
       password_reset_requests:
         base:
           new:

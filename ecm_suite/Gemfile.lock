@@ -1,3 +1,21 @@
+GIT
+  remote: https://github.com/binarylogic/authlogic
+  revision: be7d8ce40626cfe7ad4eeaa346220d431a217af0
+  specs:
+    authlogic (5.0.1)
+      activemodel (>= 5.2, < 6.1)
+      activerecord (>= 5.2, < 6.1)
+      activesupport (>= 5.2, < 6.1)
+      request_store (~> 1.0)
+      scrypt (>= 1.2, < 4.0)
+
+GIT
+  remote: https://github.com/michelson/acts-as-taggable-on
+  revision: b06f17165007c35929a1ed4cd2e0f0e509cacd02
+  specs:
+    acts-as-taggable-on (6.0.1)
+      activerecord (~> 5.0)
+
 PATH
   remote: ../../../gems/administrador
   specs:
@@ -5,19 +23,21 @@ PATH
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
-      rails (~> 5.2.1)
+      rails (>= 5.2.0)
       rails-i18n
-      rao-component
-      rao-resources_controller
-      rao-service_controller
-      rao-view_helper
+      rao-component (>= 0.0.12.pre)
+      rao-query (>= 0.0.12.pre)
+      rao-resource_controller (>= 0.0.12.pre)
+      rao-resources_controller (>= 0.0.12.pre)
+      rao-service_controller (>= 0.0.12.pre)
+      rao-view_helper (>= 0.0.12.pre)
       route_translator
       simple_form
 
 PATH
   remote: ../../../gems/rao/rao-component
   specs:
-    rao-component (0.0.10.pre)
+    rao-component (0.0.12.pre)
       haml-rails
       rails
       rao
@@ -25,16 +45,67 @@ PATH
 PATH
   remote: ../../../gems/rao/rao-query
   specs:
-    rao-query (0.0.10.pre)
+    rao-query (0.0.12.pre)
       rails
       rao
       rao-view_helper
 
 PATH
+  remote: ../../../gems/rao/rao-resource_controller
+  specs:
+    rao-resource_controller (0.0.12.pre)
+      rao
+
+PATH
   remote: ../../../gems/rao/rao-resources_controller
   specs:
-    rao-resources_controller (0.0.10.pre)
+    rao-resources_controller (0.0.12.pre)
       rao
+
+PATH
+  remote: ../../../gems/rao/rao-view_helper
+  specs:
+    rao-view_helper (0.0.12.pre)
+      rao
+
+PATH
+  remote: ../ecm_blog_backend
+  specs:
+    ecm_blog_backend (0.2.0)
+      ecm_blog
+      rails
+      rao-query
+
+PATH
+  remote: ../ecm_blog
+  specs:
+    ecm_blog (1.3.0)
+      acts_as_list
+      acts_as_published
+      ecm_comments
+      friendly_id
+      html2markdown
+      kaminari
+      kramdown
+      rails
+
+PATH
+  remote: ../ecm_carousels_backend
+  specs:
+    ecm_carousels_backend (10.0.0.pre)
+      ecm_carousels
+      ecm_core_backend
+      rails
+
+PATH
+  remote: ../ecm_carousels
+  specs:
+    ecm_carousels (10.0.0.pre)
+      acts_as_list
+      acts_as_markup
+      ecm_core
+      mini_magick
+      rails
 
 PATH
   remote: ../ecm_cms2_backend
@@ -54,6 +125,7 @@ PATH
       draper
       rails (>= 4.0)
       rao-service
+      rao-view_helper
       simple-navigation (>= 4.0.0)
 
 PATH
@@ -83,11 +155,10 @@ PATH
   remote: ../ecm_files
   specs:
     ecm_files (10.0.0.pre)
-      rails (~> 5.2.0.rc1)
+      rails (>= 5.2.0)
       rao-component
       rao-resources_controller
       route_translator
-      twitter-bootstrap-components-rails
 
 PATH
   remote: ../ecm_galleries_backend
@@ -110,12 +181,6 @@ PATH
       twitter-bootstrap-components-rails
 
 PATH
-  remote: ../ecm_lightbox2
-  specs:
-    ecm_lightbox2 (10.0.0.pre)
-      rails (>= 4.0)
-
-PATH
   remote: ../ecm_links2_backend
   specs:
     ecm_links2_backend (10.0.0.pre)
@@ -132,8 +197,10 @@ PATH
       awesome_nested_set
       awesome_nested_set-tools
       draper
+      ecm_core
       friendly_id
       rails (>= 4.0)
+      rao-view_helper
 
 PATH
   remote: ../ecm_rbac_backend
@@ -168,6 +235,7 @@ PATH
       friendly_id
       mini_magick
       rails
+      twitter-bootstrap-components-rails
 
 PATH
   remote: ../ecm_tags_backend
@@ -204,6 +272,7 @@ PATH
       bcrypt
       ecm_core
       rails (>= 4.0)
+      rao-view_helper
 
 PATH
   remote: ..
@@ -227,6 +296,10 @@ PATH
   specs:
     ecm_suite (10.0.0.pre)
       ecm
+      ecm_blog
+      ecm_blog_backend
+      ecm_carousels
+      ecm_carousels_backend
       ecm_cms2
       ecm_cms2_backend
       ecm_contact2
@@ -235,18 +308,21 @@ PATH
       ecm_files_backend
       ecm_galleries
       ecm_galleries_backend
-      ecm_lightbox2
       ecm_links2
       ecm_links2_backend
       ecm_rbac
       ecm_rbac_backend
-      ecm_sliders2
-      ecm_sliders2_backend
       ecm_tags
       ecm_tags_backend
       ecm_user_area2
       ecm_user_area2_backend
       rails
+
+PATH
+  remote: ../../../gems/rao/rao-shoulda_matchers
+  specs:
+    rao-shoulda_matchers (0.0.12.pre)
+      rao
 
 GEM
   remote: https://rubygems.org/
@@ -302,8 +378,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
     acts_as_list (0.9.17)
       activerecord (>= 3.0)
     acts_as_markup (2.0.2)
@@ -312,13 +386,9 @@ GEM
       rdiscount
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
-    authlogic (5.0.0)
-      activemodel (>= 5.2, < 6.1)
-      activerecord (>= 5.2, < 6.1)
-      activesupport (>= 5.2, < 6.1)
-      request_store (~> 1.0)
-      scrypt (>= 1.2, < 4.0)
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
     awesome_nested_set-tools (1.0.2)
@@ -331,6 +401,14 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
+    capybara (3.14.0)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (~> 1.2)
+      xpath (~> 3.2)
     case_transform (0.2)
       activesupport
     coderay (1.1.2)
@@ -349,15 +427,24 @@ GEM
       activerecord (>= 3.0, < 5.3)
       delayed_job (>= 3.0, < 5)
     diff-lcs (1.3)
+    docile (1.3.1)
     draper (3.0.1)
       actionpack (~> 5.0)
       activemodel (~> 5.0)
       activemodel-serializers-xml (~> 1.0)
       activesupport (~> 5.0)
       request_store (~> 1.0)
+    ecm_comments (0.2.3)
+      rails
+      twitter-bootstrap-components-rails
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.1)
+      factory_bot (~> 5.0.0)
+      railties (>= 4.2.0)
     ffi (1.10.0)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -402,6 +489,8 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    html2markdown (0.0.3)
+      nokogiri
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     i18n-debug (1.2.0)
@@ -410,6 +499,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (2.2.0)
     jsonapi-renderer (0.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -423,6 +513,7 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kramdown (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -437,7 +528,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
     mimemagic (0.3.3)
-    mini_magick (4.9.2)
+    mini_magick (4.9.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -453,6 +544,7 @@ GEM
       method_source (~> 0.9.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
     rack-test (1.1.0)
@@ -492,17 +584,16 @@ GEM
       activemodel
       activesupport
       rao
-    rao-service_controller (0.0.10.pre)
+    rao-service_controller (0.0.12.pre)
       font-awesome-rails
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-view_helper (0.0.10.pre)
-      rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdiscount (2.2.0.1)
+    regexp_parser (1.3.0)
     request_store (1.4.1)
       rack (>= 1.4)
     request_store_rails (1.0.3)
@@ -546,6 +637,11 @@ GEM
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -567,13 +663,22 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   administrador!
+  authlogic!
+  capybara
   ecm!
+  ecm_blog!
+  ecm_blog_backend!
+  ecm_carousels!
+  ecm_carousels_backend!
   ecm_cms2!
   ecm_cms2_backend!
   ecm_contact2!
@@ -582,7 +687,6 @@ DEPENDENCIES
   ecm_files_backend!
   ecm_galleries!
   ecm_galleries_backend!
-  ecm_lightbox2!
   ecm_links2!
   ecm_links2_backend!
   ecm_rbac!
@@ -594,6 +698,7 @@ DEPENDENCIES
   ecm_tags_backend!
   ecm_user_area2!
   ecm_user_area2_backend!
+  factory_bot_rails
   git_log_generator
   guard-bundler
   guard-rspec
@@ -603,8 +708,12 @@ DEPENDENCIES
   rails-dummy
   rao-component!
   rao-query!
+  rao-resource_controller!
   rao-resources_controller!
+  rao-shoulda_matchers!
+  rao-view_helper!
   rspec-rails
+  simplecov
   sqlite3 (~> 1.3.6)
 
 BUNDLED WITH

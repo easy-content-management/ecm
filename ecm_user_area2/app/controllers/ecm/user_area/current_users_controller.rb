@@ -1,7 +1,7 @@
 module Ecm
   module UserArea
     class CurrentUsersController < Users::BaseController
-      helper Rao::Component::TableHelper
+      helper Rao::Component::ApplicationHelper
 
       def self.resource_class
         Ecm::UserArea::User

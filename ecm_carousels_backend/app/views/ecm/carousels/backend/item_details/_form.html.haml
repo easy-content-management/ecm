@@ -1,0 +1,4 @@
+= form.association :carousel, label_method: :human
+= form.input :url
+= form.input :body
+= form.input :markup_language, collection: Ecm::Carousels::Configuration.markup_languages

@@ -28,7 +28,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
   end
 
   def prepare_for_new
-    @navigation = FactoryGirl.create(:ecm_cms_navigation)
+    @navigation = FactoryBot.create(:ecm_cms_navigation)
   end
 
   def fill_new_form
@@ -43,7 +43,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
   end
 
   background do
-    admin_user = FactoryGirl.create(:admin_user)
+    admin_user = FactoryBot.create(:admin_user)
     sign_in_with(admin_user.email, admin_user.password)
 
     set_locale
@@ -86,7 +86,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
 
   describe 'show' do
     background do
-      @resource = FactoryGirl.create(@resource_factory_name)
+      @resource = FactoryBot.create(@resource_factory_name)
       visit "#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}"
     end
 
@@ -97,7 +97,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
 
   describe 'edit' do
     background do
-      @resource = FactoryGirl.create(@resource_factory_name)
+      @resource = FactoryBot.create(@resource_factory_name)
       visit "#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}/edit"
     end
 
@@ -133,7 +133,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
 
   describe 'delete' do
     background do
-      @resource = FactoryGirl.create(@resource_factory_name)
+      @resource = FactoryBot.create(@resource_factory_name)
       @resource_count = @resource_class.count
       visit "#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}"
       find(:xpath, "//a[@href='#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}' and @data-method='delete']").click
@@ -151,7 +151,7 @@ feature 'Ecm::Cms::NavigationItem admin' do
   describe 'index' do
     background do
       set_index_check_column
-      @resources = FactoryGirl.create_list(@resource_factory_name, 3)
+      @resources = FactoryBot.create_list(@resource_factory_name, 3)
       visit "#{@admin_area_path}/#{@resource_path}"
     end
 

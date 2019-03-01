@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Links
     describe Link do
-      subject { FactoryGirl.create(:ecm_links_link) }
+      subject { FactoryBot.create(:ecm_links_link) }
 
       context 'associations' do
         it { should belong_to(:ecm_links_category) }
@@ -23,7 +23,7 @@ module Ecm
 
       context ' markup' do
         subject do
-          FactoryGirl.create(:ecm_links_link,
+          FactoryBot.create(:ecm_links_link,
                              description: 'h1. This is a heading'
                             )
         end

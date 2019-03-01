@@ -14,7 +14,7 @@ describe 'ActiveRecord::Base models' do
       end
 
       it 'should be valid with correct attribute values' do
-        instance = FactoryGirl.create(model.to_s.tableize.singularize.underscore.tr('/', '_'))
+        instance = FactoryBot.create(model.to_s.tableize.singularize.underscore.tr('/', '_'))
         expect(instance.valid?).to be_truthy
       end
 
@@ -24,7 +24,7 @@ describe 'ActiveRecord::Base models' do
       end
 
       it 'should save with valid attributes' do
-        instance = FactoryGirl.create(model.to_s.tableize.singularize.underscore.tr('/', '_'))
+        instance = FactoryBot.create(model.to_s.tableize.singularize.underscore.tr('/', '_'))
         expect(instance.save).to be_truthy
         expect(instance).to be_persisted
       end

@@ -1,5 +1,7 @@
 module Ecm::Tags
   class Tagging < ActsAsTaggableOn::Tagging
+    self.table_name = 'taggings'
+
     def human
       "#{taggable} - #{tag}"
     end

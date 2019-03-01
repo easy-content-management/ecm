@@ -1,0 +1,5 @@
+en:
+  classes:
+    ecm/carousels/backend/engine: 'Carousels'
+  routes:
+    ecm-carousels-backend-engine: 'carousels'

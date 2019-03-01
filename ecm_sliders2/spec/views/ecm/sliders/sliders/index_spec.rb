@@ -10,7 +10,7 @@ describe "ecm/sliders/sliders/index" do
   end
   
   it "renders _slider partial for each slider" do
-    @sliders = FactoryGirl.create_list(:ecm_sliders_slider, 2)
+    @sliders = FactoryBot.create_list(:ecm_sliders_slider, 2)
     assign(:sliders, @sliders)
     render
     @sliders.map(&:ecm_sliders_items).flatten.each do |item| 

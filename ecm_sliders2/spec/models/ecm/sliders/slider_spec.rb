@@ -3,7 +3,7 @@ require 'spec_helper'
 module Ecm
   module Sliders
     describe Slider do
-      subject { FactoryGirl.create :ecm_sliders_slider }
+      subject { FactoryBot.create :ecm_sliders_slider }
 
       context "associations" do
         it { should have_many :ecm_sliders_items }
@@ -26,8 +26,8 @@ module Ecm
             before(:each) do
               I18n.locale = :de
               @name = 'example'
-              @slider    = FactoryGirl.create(:ecm_sliders_slider_with_items, :locale => nil, :name => @name)
-              @de_slider = FactoryGirl.create(:ecm_sliders_slider_with_items, :locale => I18n.locale.to_s, :name => @name)
+              @slider    = FactoryBot.create(:ecm_sliders_slider_with_items, :locale => nil, :name => @name)
+              @de_slider = FactoryBot.create(:ecm_sliders_slider_with_items, :locale => I18n.locale.to_s, :name => @name)
             end
 
             subject { Ecm::Sliders::Slider.where(:name => @name).for_locale(I18n.locale).first }
@@ -41,7 +41,7 @@ module Ecm
             before(:each) do
               I18n.locale = :de
               @name = 'example'
-              @slider = FactoryGirl.create(:ecm_sliders_slider_with_items, :locale => nil, :name => @name)
+              @slider = FactoryBot.create(:ecm_sliders_slider_with_items, :locale => nil, :name => @name)
             end
 
             subject { Ecm::Sliders::Slider.where(:name => @name).for_locale(I18n.locale).first }
@@ -54,7 +54,7 @@ module Ecm
       end
 
       context "friendly id" do
-        subject { FactoryGirl.create(:ecm_sliders_slider, :name => 'Look, a slugged category!') }
+        subject { FactoryBot.create(:ecm_sliders_slider, :name => 'Look, a slugged category!') }
         its(:to_param) { should eq('look-a-slugged-category') }
       end
 

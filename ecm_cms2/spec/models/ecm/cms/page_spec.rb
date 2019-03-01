@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Cms
     describe Page do
-      subject { FactoryGirl.create :ecm_cms_page }
+      subject { FactoryBot.create :ecm_cms_page }
 
       context 'associations' do
         it { should belong_to :ecm_cms_folder }
@@ -32,8 +32,8 @@ module Ecm
 
       context 'page callbacks' do
         it 'updates associated navigation items when the basename changes' do
-          navigation_item = FactoryGirl.create(:ecm_cms_navigation_item, url: '/foo')
-          page = FactoryGirl.build :ecm_cms_page, pathname: '/', basename: 'bar', locale: 'de'
+          navigation_item = FactoryBot.create(:ecm_cms_navigation_item, url: '/foo')
+          page = FactoryBot.build :ecm_cms_page, pathname: '/', basename: 'bar', locale: 'de'
           page.ecm_cms_navigation_items << navigation_item
           page.save!
           navigation_item.url.should eq('/de/bar')

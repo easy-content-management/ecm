@@ -23,6 +23,15 @@ Rails.application.routes.draw do
 
 
 
+
+
+
+
+  localized do
+    mount Ecm::Blog::Backend::Engine, at: '/backend/ecm-blog-backend-engine'
+  end
+  mount Ecm::Blog::Engine, at: '/'
+  mount Ecm::UserArea::Engine, at: '/'
   localized do
     mount Ecm::UserArea::Backend::Engine, at: '/backend/ecm-user-area-backend-engine'
   end
@@ -64,4 +73,7 @@ Rails.application.routes.draw do
     mount Administrador::Engine, at: '/administrador-engine'
   end
 
+  mount Ecm::Cms::Engine, at: '/' # This one is greedy and has to go last!
+
+  root to: redirect("/#{I18n.locale}")
 end

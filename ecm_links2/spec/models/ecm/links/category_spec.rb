@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Links
     describe Category do
-      subject { FactoryGirl.create(:ecm_links_category) }
+      subject { FactoryBot.create(:ecm_links_category) }
 
       it { should respond_to :human }
 
@@ -18,7 +18,7 @@ module Ecm
 
       context 'acts as markup' do
         subject do
-          FactoryGirl.create(:ecm_links_category,
+          FactoryBot.create(:ecm_links_category,
                              short_description: 'h1. This is a heading',
                              long_description: 'h1. This is a heading'
                             )
@@ -52,14 +52,14 @@ module Ecm
         end
 
         it 'should not accept a locale if it is not a root node' do
-          product_category = FactoryGirl.create(:ecm_links_category_with_parent)
+          product_category = FactoryBot.create(:ecm_links_category_with_parent)
           product_category.locale = 'en'
           product_category.should_not be_valid
         end
       end
 
       context 'friendly id' do
-        subject { FactoryGirl.create(:ecm_links_category, name: 'Look, a slugged category!') }
+        subject { FactoryBot.create(:ecm_links_category, name: 'Look, a slugged category!') }
 
         it { expect(subject.to_param).to eq('look-a-slugged-category') }
       end

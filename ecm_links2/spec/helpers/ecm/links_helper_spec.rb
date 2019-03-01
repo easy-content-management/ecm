@@ -5,7 +5,7 @@ module Ecm
     describe '#render_link_footer' do
       before(:each) do
         I18n.locale = :en
-        @categories = FactoryGirl.create_list(:ecm_links_category_for_link_footer, 6, locale: :en)
+        @categories = FactoryBot.create_list(:ecm_links_category_for_link_footer, 6, locale: :en)
       end
 
       subject { helper.render_link_footer }
@@ -19,8 +19,8 @@ module Ecm
       context 'i18n support' do
         before(:each) do
           I18n.locale = :de
-          @de_categories = FactoryGirl.create_list(:ecm_links_category_for_link_footer, 6, locale: 'de')
-          @en_categories = FactoryGirl.create_list(:ecm_links_category_for_link_footer, 6, locale: 'en')
+          @de_categories = FactoryBot.create_list(:ecm_links_category_for_link_footer, 6, locale: 'de')
+          @en_categories = FactoryBot.create_list(:ecm_links_category_for_link_footer, 6, locale: 'en')
         end
 
         it 'should show category names with the actual locale' do

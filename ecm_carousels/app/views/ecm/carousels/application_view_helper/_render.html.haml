@@ -1,0 +1,3 @@
+= bootstrap_carousel(autostart: carousel.auto_start, interval: carousel.interval_in_milliseconds, id: dom_id(carousel)) do |c|
+  - carousel.item_details.each do |item_detail|
+    - c.add_item(image_source: main_app.url_for(item_detail.asset.variant(resize: Ecm::Carousels::Configuration.item_image_styles[:carousel])), caption: markup_helper(self).render(item, :body))

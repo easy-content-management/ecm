@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Cms
     describe Template do
-      subject { FactoryGirl.create :ecm_cms_template }
+      subject { FactoryBot.create :ecm_cms_template }
 
       context 'associations' do
         it { should belong_to :ecm_cms_folder }

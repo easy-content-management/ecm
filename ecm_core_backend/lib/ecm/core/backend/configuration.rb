@@ -32,6 +32,17 @@ module Ecm
           rc.reject! { |c| c.name =~ /.*Delayed.*/ } unless enable_delayed_job_backend
           -> { rc }
         end
+
+        mattr_accessor(:image_variant_options) {
+          {
+            gallery: { resize: "640x480" },
+            table:   { resize: "160x120" }
+          }
+        }
+
+        def self.image_variant_options_for(identifier)
+          @@image_variant_options[identifier]
+        end
       end
     end
   end

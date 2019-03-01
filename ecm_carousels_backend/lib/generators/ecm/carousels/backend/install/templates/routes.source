@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Ecm::Carousels::Backend::Engine, at: '/backend/ecm-carousels-backend-engine'
+  end

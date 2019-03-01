@@ -7,8 +7,8 @@
 
 .well
   = form.input :markup_language, collection: Ecm::Links::markup_languages
-  = form.input :short_description, input_html: { 'data-add-editor': Itsf::Backend.features?(:'ace-rails-ap'), 'data-editor-syntax': form.object.markup_language }
-  = form.input :long_description,  input_html: { 'data-add-editor': Itsf::Backend.features?(:'ace-rails-ap'), 'data-editor-syntax': form.object.markup_language }
+  = form.input :short_description
+  = form.input :long_description
 
 .well
   = form.input :link_footer_column, collection: (1..Ecm::Links::Configuration.link_footer_columns).to_a

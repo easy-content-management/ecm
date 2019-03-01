@@ -8,9 +8,9 @@ module Ecm
         yield self
       end
 
-      mattr_accessor :base_controller do
-        '::FrontendController'
-      end
+      mattr_accessor(:base_controller) { '::FrontendController' }
+      mattr_accessor(:markup_languages) {  %w[ markdown rdoc textile ] }
+      mattr_accessor(:default_markup_language) { 'textile' }
     end
   end
 end

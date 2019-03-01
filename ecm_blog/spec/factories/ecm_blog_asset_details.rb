@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :ecm_blog_asset_detail, class: Ecm::Blog::AssetDetail do
     association(:post, factory: :ecm_blog_post)
     after(:build) { |ad| 

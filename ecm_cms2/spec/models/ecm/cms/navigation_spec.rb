@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Cms
     describe Navigation do
-      subject { FactoryGirl.create :ecm_cms_navigation }
+      subject { FactoryBot.create :ecm_cms_navigation }
 
       context 'associations' do
         it { should have_many :ecm_cms_navigation_items }

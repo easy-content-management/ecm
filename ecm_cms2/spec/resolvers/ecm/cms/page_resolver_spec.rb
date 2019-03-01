@@ -153,14 +153,14 @@ module Ecm
         #        end
 
         before(:each) do
-          @sidebar_content_box = FactoryGirl.build(:ecm_cms_content_box, name: 'sidebar')
-          @footer_content_box = FactoryGirl.build(:ecm_cms_content_box, name: 'footer')
+          @sidebar_content_box = FactoryBot.build(:ecm_cms_content_box, name: 'sidebar')
+          @footer_content_box = FactoryBot.build(:ecm_cms_content_box, name: 'footer')
           @page = Ecm::Cms::Page.new do |page|
             page.body = 'foo'
             page.title = 'bar'
             page.meta_description = 'baz'
-            page.ecm_cms_page_content_blocks << FactoryGirl.build(:ecm_cms_page_content_block, ecm_cms_page: page, ecm_cms_content_box: @sidebar_content_box, body: 'sidebar content')
-            page.ecm_cms_page_content_blocks << FactoryGirl.build(:ecm_cms_page_content_block, ecm_cms_page: page, ecm_cms_content_box: @footer_content_box, body: 'footer content')
+            page.ecm_cms_page_content_blocks << FactoryBot.build(:ecm_cms_page_content_block, ecm_cms_page: page, ecm_cms_content_box: @sidebar_content_box, body: 'sidebar content')
+            page.ecm_cms_page_content_blocks << FactoryBot.build(:ecm_cms_page_content_block, ecm_cms_page: page, ecm_cms_content_box: @footer_content_box, body: 'footer content')
           end
         end
 

@@ -27,13 +27,13 @@ module Ecm
         end
 
         def run_frontend_generators
-          %w(blog core cms contact files galleries lightbox links rbac sliders tags).each do |m|
+          %w(blog carousels core cms contact files galleries lightbox links rbac tags).each do |m|
             generate "ecm:#{m}:install"
           end
         end
         
         def run_backend_generators
-          %w(blog core cms contact files galleries links rbac sliders tags user_area).each do |m|
+          %w(blog carousels core cms contact files galleries links rbac tags user_area).each do |m|
             generate "ecm:#{m}:backend:install"
           end
         end
@@ -41,17 +41,6 @@ module Ecm
         def run_migrations_generator
           generate "ecm:suite:migrations"
         end
-
-        # def generate_active_storage_migrations
-        #   `rails active_storage:install:migrations`
-        # end
-        
-        # def generate_migrations
-        #   Rails.application.load_tasks # <-- MISSING LINE
-        #   %w(cms contact files galleries links rbac sliders tags user_area).each do |m|
-        #     `rails ecm_#{m}:install:migrations`
-        #   end
-        # end
       end
     end
   end

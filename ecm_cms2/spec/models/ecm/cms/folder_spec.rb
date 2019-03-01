@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Cms
     describe Folder do
-      subject { FactoryGirl.create :ecm_cms_folder }
+      subject { FactoryBot.create :ecm_cms_folder }
 
       context 'associations' do
         it { should have_many :ecm_cms_pages }

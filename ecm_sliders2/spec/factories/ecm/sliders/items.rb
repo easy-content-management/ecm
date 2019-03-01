@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :ecm_sliders_item, class: Ecm::Sliders::Item do
     association :slider, factory: :ecm_sliders_slider
     markup_language 'textile'

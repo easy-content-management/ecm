@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "route_translator"
   s.add_dependency "rao-resources_controller"
   s.add_dependency "rao-component"
-  s.add_dependency "twitter-bootstrap-components-rails"
+  # s.add_dependency "twitter-bootstrap-components-rails"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "responders"

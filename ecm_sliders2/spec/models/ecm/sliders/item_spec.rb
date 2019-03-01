@@ -3,7 +3,7 @@ require 'spec_helper'
 module Ecm
   module Sliders
     describe Item do
-      subject { FactoryGirl.create :ecm_sliders_item }
+      subject { FactoryBot.create :ecm_sliders_item }
 
       context "acts as list" do
         it { should respond_to(:move_to_top) }

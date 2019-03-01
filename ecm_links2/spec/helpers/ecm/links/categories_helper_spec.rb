@@ -5,7 +5,7 @@ module Ecm
     describe CategoriesHelper do
       describe '#render_link_category' do
         before(:each) do
-          @category = FactoryGirl.create(:ecm_links_category)
+          @category = FactoryBot.create(:ecm_links_category)
         end
 
         subject { helper.render_link_category(@category) }

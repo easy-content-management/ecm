@@ -1,8 +1,7 @@
+require 'authlogic'
 require 'ecm_core'
 require 'active_model_serializers'
-require 'authlogic'
-# require 'haml-rails'
-# require 'simple_form'
+require 'rao-view_helper'
 
 require 'ecm/user_area/engine'
 require 'ecm/user_area/configuration'

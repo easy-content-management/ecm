@@ -3,7 +3,7 @@ require 'rails_helper'
 module Ecm
   module Cms
     describe Partial do
-      subject { FactoryGirl.create :ecm_cms_partial }
+      subject { FactoryBot.create :ecm_cms_partial }
 
       context 'associations' do
         it { should belong_to :ecm_cms_folder }
@@ -29,7 +29,7 @@ module Ecm
       end
 
       context 'partial callbacks' do
-        subject { FactoryGirl.build :ecm_cms_partial }
+        subject { FactoryBot.build :ecm_cms_partial }
 
         it "adds a '_' to the basename before validation" do
           subject.basename = 'foo'

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'pages with different layouts' do
   it 'uses page specific layouts' do
     # TODO: replace this with a template as soon as the template model is done.
-    layout_model = FactoryGirl.create(:ecm_cms_page,
+    layout_model = FactoryBot.create(:ecm_cms_page,
                                       pathname: '/layouts/',
                                       basename: 'foo',
                                       locale: '',
@@ -12,7 +12,7 @@ describe 'pages with different layouts' do
                                       body: 'Foo Layout <%= yield %>'
                                      )
 
-    page_model = FactoryGirl.create(:ecm_cms_page,
+    page_model = FactoryBot.create(:ecm_cms_page,
                                     pathname: '/',
                                     basename: 'home',
                                     locale: 'en',

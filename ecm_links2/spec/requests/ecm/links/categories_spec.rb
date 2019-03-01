@@ -13,7 +13,7 @@ describe 'Ecm::Links::Category requests' do
 
   describe 'show' do
     before do
-      @resource = FactoryGirl.create(@resource_factory_name)
+      @resource = FactoryBot.create(@resource_factory_name)
       get "/#{@resource_path}/#{@resource.to_param}"
     end
 

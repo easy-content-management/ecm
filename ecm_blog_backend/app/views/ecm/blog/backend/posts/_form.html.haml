@@ -4,5 +4,6 @@
 = form.input :title
 = form.input :body
 = form.input :published, as: :boolean
-= form.input :tag_list if Ecm::Blog.features?(:ecm_tags)
 = form.input :assets, as: :file, input_html: { multiple: true }
+- if Ecm::Blog.features?(:ecm_tags)
+  = form.input :tag_list

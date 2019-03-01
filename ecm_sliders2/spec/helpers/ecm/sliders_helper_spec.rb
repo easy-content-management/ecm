@@ -5,7 +5,7 @@ module Ecm
     describe "#render_slider" do
       context "basic behaviour" do
         before(:each) do
-          @slider = FactoryGirl.create(:ecm_sliders_slider_with_items)
+          @slider = FactoryBot.create(:ecm_sliders_slider_with_items)
         end
 
         subject { helper.render_slider(@slider.name) }
@@ -19,7 +19,7 @@ module Ecm
 
       context "uses slider without locale if there is no better" do
         before(:each) do
-          @slider = FactoryGirl.create(:ecm_sliders_slider_with_items, :locale => nil)
+          @slider = FactoryBot.create(:ecm_sliders_slider_with_items, :locale => nil)
         end
 
         subject { helper.render_slider(@slider.name) }

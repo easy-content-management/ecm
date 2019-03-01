@@ -22,8 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'active_model_serializers'
   s.add_dependency 'authlogic'
   s.add_dependency 'bcrypt'
-  # s.add_dependency 'haml-rails'
-  # s.add_dependency 'simple_form'
+  s.add_dependency 'rao-view_helper'
 
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'launchy'

@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( ecm_carousels_backend.css ecm_carousels_backend.js )

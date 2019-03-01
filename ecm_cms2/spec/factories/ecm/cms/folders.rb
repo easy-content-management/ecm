@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :ecm_cms_folder, class: Ecm::Cms::Folder do
-    pathname '/'
-    basename 'foo'
+    pathname { '/' }
+    basename { 'foo' }
   end
 end

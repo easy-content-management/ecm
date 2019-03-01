@@ -2,5 +2,5 @@
 # include ActionDispatch::TestProcess
 
 require 'factory_girl'
-FactoryGirl.find_definitions
+FactoryBot.find_definitions
 

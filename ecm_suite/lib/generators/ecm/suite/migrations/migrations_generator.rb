@@ -9,7 +9,7 @@ module Ecm
         end
         
         def generate_migrations
-          %w(blog cms contact files galleries links rbac sliders tags user_area).each do |m|
+          %w(blog carousels cms contact files galleries links rbac tags user_area).each do |m|
             `rails ecm_#{m}:install:migrations`
           end
         end
