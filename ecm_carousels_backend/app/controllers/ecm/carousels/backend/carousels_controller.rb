@@ -7,7 +7,7 @@ module Ecm::Carousels::Backend
     private
 
     def permitted_params
-      params.require(:carousel).permit(:identifier, :locale, { assets: [], overwrite_assets: [], append_assets: [] })
+      params.require(:carousel).permit(:identifier, :locale, :height, :width, { assets: [], overwrite_assets: [], append_assets: [] })
     end
   end
 end

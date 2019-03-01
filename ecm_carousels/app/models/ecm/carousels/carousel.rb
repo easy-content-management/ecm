@@ -12,22 +12,11 @@ module Ecm
       # scopes
       scope :for_locale, ->(locale) { where(self.arel_table[:locale].eq(locale).or(self.arel_table[:locale].eq(nil))).order(locale: :desc) }
 
-      # # callbacks
-      # after_initialize :set_defaults, if: :new_record?
-
-      # # friendly id
-      # extend FriendlyId
-      # friendly_id :name, use: :slugged
-
       # validations
       validates :locale, inclusion: I18n.available_locales.map(&:to_s),
                         if: proc { |carousel| carousel.locale.present? }
       validates :identifier, presence: true,
                             uniqueness: { scope: [:locale] }
-
-      # def interval_in_milliseconds
-      #   (interval * 1000).to_i
-      # end
 
       def human
         "#{identifier} (#{locale})"
@@ -37,12 +26,6 @@ module Ecm
         item_details.count
       end
 
-      # private
-
-      # def set_defaults
-      #   self.auto_start = Ecm::Carousels::Configuration.carousel_auto_start if auto_start.nil?
-      #   self.interval ||= Ecm::Carousels::Configuration.carousel_interval
-      # end
       module ItemDetailsConcern
         extend ActiveSupport::Concern
 
@@ -96,6 +79,33 @@ module Ecm
       end
 
       include AppenadableAssetsConcern
+
+      module VariantOptionsConcern
+        extend ActiveSupport::Concern
+
+        included do
+          attr_accessor :height, :width
+          
+          serialize :variant_options
+          
+          validates :width, numericality: true, allow_nil: true
+          validates :height, numericality: true, allow_nil: true
+          
+          before_validation :set_variant_options
+        end
+
+        private
+
+        def set_variant_options
+          self.variant_options = build_variant_options
+        end
+
+        def build_variant_options
+          { resize: "#{width}x#{height}" }
+        end
+      end
+
+      include VariantOptionsConcern
     end
   end
 end
