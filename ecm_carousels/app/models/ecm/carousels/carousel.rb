@@ -86,12 +86,12 @@ module Ecm
 
         def width
           return nil unless variant_options.try(:[], :resize).present?
-          variant_options[:resize].split("x").first
+          @width || variant_options[:resize].split("x")[0]
         end
 
         def height
           return nil unless variant_options.try(:[], :resize).present?
-          variant_options[:resize].split("x").last
+          @height || variant_options[:resize].split("x")[1]
         end
 
         private
