@@ -8,11 +8,11 @@ en:
         one: carousel
         other: carousels
     attributes:
-      ecm/carousels/item:
+      ecm/carousels/item_detail:
         id: ID
-        body: body
+        asset: image
+        description: body
         created_at: created at
-        markup_language: Markup language
         image: Bild
         image_content_type: image filetype
         image_file_name: imagte filename
@@ -20,22 +20,19 @@ en:
         image_fingerprint: image fingerprint
         image_updated_at: image updated at
         position: position
+        published_at: published at
         carousel: Carousel
         carousel_id: Carousel
-        slug: Slug
         updated_at: updated at
         url: url
       ecm/carousels/carousel:
         id: ID
-        auto_start: auto start
         created_at: created at
         description: description
         items: carousel items
         items_count: carousel items
         locale: locale
         name: name
-        interval: interval
-        slug: friendly id
         updated_at: updated at
   resources:
     ecm_carousels_items: carousel-items

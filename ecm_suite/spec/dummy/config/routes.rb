@@ -27,6 +27,11 @@ Rails.application.routes.draw do
 
 
 
+
+
+  localized do
+    mount Ecm::Carousels::Backend::Engine, at: '/backend/ecm-carousels-backend-engine'
+  end
   localized do
     mount Ecm::Blog::Backend::Engine, at: '/backend/ecm-blog-backend-engine'
   end

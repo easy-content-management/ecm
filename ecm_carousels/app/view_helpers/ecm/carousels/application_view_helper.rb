@@ -11,18 +11,28 @@ module Ecm
       # Example:
       #
       #     # This will render a bootstrap 4 compatible carousel
-      #     = carousels_helper(self).render(:main)
+      #     = carousels_helper(self).render(:main, autostart: true, interval: 5.0, variant_options: { resize: "1920x1080" })
       #
       def render(identifier, options = {})
-        options.reverse_merge!(autostart: true, interval: 5.0)
-        carousel_options = options.slice(:autostart, :interval)
+        options.reverse_merge!(autostart: true, interval: 5.0, keyboard: true, pause: :hover, ride: false, wrap: true, controls: true)
+        carousel_options = options.slice(:autostart, :interval, :pause, :ride, :wrap)
+        data_attributes = carousel_options_to_data_attributes(carousel_options)
 
         carousel = Ecm::Carousels::Carousel.where(identifier: identifier.to_s).for_locale(I18n.locale).first
+
+        variant_options = options.delete(:variant_options) || carousel.variant_options
+
         if carousel.nil?
           return I18n.t('ecm.carousels.carousel.warnings.not_found', identifier: identifier)
         else
-          return c.render partial: 'ecm/carousels/application_view_helper/render', locals: { carousel: carousel, options: carousel_options }
+          return c.render partial: 'ecm/carousels/application_view_helper/render', locals: { carousel: carousel, options: options, data_attributes: data_attributes, variant_options: variant_options }
         end
+      end
+
+      private
+
+      def carousel_options_to_data_attributes(carousel_options)
+        carousel_options.collect { |k,v| "\"data-#{k.to_s.dasherize}\"=#{v}" }.join(" ")
       end
     end
   end

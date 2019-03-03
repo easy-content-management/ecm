@@ -10,7 +10,7 @@ de:
           destroy_many:
             success: Löschvorgang erfolgreich.
         picture_galleries:
-          show_extras:
+          after_show_table:
             destroy: Löschen
             edit: Bearbeiten
             publish: Veröffentlichen

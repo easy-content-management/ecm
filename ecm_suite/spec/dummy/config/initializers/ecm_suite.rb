@@ -1,5 +1,6 @@
 Ecm::Suite.configure do |config|
   config.administrador.register_engine 'Ecm::Blog::Backend::Engine',      {}
+  config.administrador.register_engine 'Ecm::Carousels::Backend::Engine', {}
   config.administrador.register_engine 'Ecm::Cms::Backend::Engine',       {}
   config.administrador.register_engine 'Ecm::Contact::Backend::Engine',   {}
   config.administrador.register_engine 'Ecm::Files::Backend::Engine',     {}

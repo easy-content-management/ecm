@@ -1,4 +1,10 @@
-= form.association :carousel, label_method: :human
-= form.input :url
-= form.input :body
-= form.input :markup_language, collection: Ecm::Carousels::Configuration.markup_languages
+.row
+  .col-lg-12
+    %img{ class: 'img-responsive center-block', src: main_app.url_for(form.object.asset) }
+
+.row
+  .col-lg-12
+    = form.association :carousel, label_method: :human
+    = form.input :url
+    = form.input :description
+    = form.input :published, as: :boolean

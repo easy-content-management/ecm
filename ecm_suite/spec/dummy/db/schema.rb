@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_132158) do
   create_table "ecm_carousels_carousels", force: :cascade do |t|
     t.string "locale"
     t.string "identifier"
+    t.string "variant_options"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,9 +71,9 @@ ActiveRecord::Schema.define(version: 2019_03_01_132158) do
     t.integer "carousel_id"
     t.integer "asset_id"
     t.string "url"
-    t.text "body"
-    t.string "markup_language"
+    t.text "description"
     t.integer "position"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

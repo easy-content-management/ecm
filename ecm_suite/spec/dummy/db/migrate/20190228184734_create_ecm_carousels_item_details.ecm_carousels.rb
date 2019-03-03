@@ -5,9 +5,9 @@ class CreateEcmCarouselsItemDetails < ActiveRecord::Migration[4.2]
       t.references :carousel, foreign_key: false
       t.references :asset, foreign_key: false
       t.string :url
-      t.text :body
-      t.string :markup_language
+      t.text :description
       t.integer :position
+      t.timestamp :published_at
 
       t.timestamps
     end
