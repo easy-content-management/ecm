@@ -7,7 +7,8 @@ FactoryBot.define do
         filename:     'example.png',
         content_type: 'image/png'
       )
-      f.asset = assets.first
+      # f.asset = assets.first
+      f.asset = f.picture_gallery.assets.all.first
     }
   end
 end

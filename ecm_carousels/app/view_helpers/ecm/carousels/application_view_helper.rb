@@ -20,11 +20,10 @@ module Ecm
 
         carousel = Ecm::Carousels::Carousel.where(identifier: identifier.to_s).for_locale(I18n.locale).first
 
-        variant_options = options.delete(:variant_options) || carousel.variant_options
-
         if carousel.nil?
           return I18n.t('ecm.carousels.carousel.warnings.not_found', identifier: identifier)
         else
+          variant_options = options.delete(:variant_options) || carousel.variant_options
           return c.render partial: 'ecm/carousels/application_view_helper/render', locals: { carousel: carousel, options: options, data_attributes: data_attributes, variant_options: variant_options }
         end
       end

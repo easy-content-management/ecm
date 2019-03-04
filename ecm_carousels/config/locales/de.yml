@@ -44,6 +44,6 @@ de:
           more: Weiterlesen
       carousel:
         warnings:
-          not_found: Carousel %{name} nicht gefunden
+          not_found: Carousel %{identifier} nicht gefunden.
   routes:
     ecm_carousels_engine: carousel

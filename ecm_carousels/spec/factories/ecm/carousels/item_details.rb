@@ -6,8 +6,9 @@ FactoryBot.define do
         io:           File.open(Ecm::Carousels::Engine.root.join(*%w( spec files ecm carousels item_details example.png))),
         filename:     'example.png',
         content_type: 'image/png'
-        )
-      f.asset = a.first
+      )
+      # f.asset = a.first
+      f.asset = f.carousel.assets.all.first
     }
   end
 end
