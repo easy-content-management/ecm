@@ -1,6 +1,6 @@
 module Ecm::Files
   class FoldersController < ApplicationResourcesController
-    helper Rao::Component::TableHelper
+    helper Rao::Component::ApplicationHelper
 
     def self.resource_class
       Ecm::Files::Folder

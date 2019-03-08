@@ -7,7 +7,7 @@ module Ecm::Galleries
       g.fixture_replacement :factory_bot, dir: 'spec/factories' 
     end
 
-    config.factory_bot.definition_file_paths =
-      self.root.join(*%w(spec factories)) if defined?(FactoryBot)
+    # config.factory_bot.definition_file_paths =
+    #   self.root.join(*%w(spec factories)) if defined?(FactoryBot)
   end
 end

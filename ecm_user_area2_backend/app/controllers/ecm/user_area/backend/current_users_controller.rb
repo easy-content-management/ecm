@@ -6,6 +6,10 @@ module Ecm
           Ecm::UserArea::User
         end
 
+        def self.available_rest_actions
+          %w(show)
+        end
+
         def show
           @resource = current_user
           respond_with @resource
