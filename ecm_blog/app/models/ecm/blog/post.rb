@@ -1,7 +1,7 @@
 module Ecm::Blog
   class Post < ActiveRecord::Base
-    include Model::Ecm::Comments::CommentableConcern
-    include Model::Ecm::Tags::TaggableConcern
+    include Model::Ecm::Comments::CommentableConcern if Ecm::Blog.features?(:ecm_comments)
+    include Model::Ecm::Tags::TaggableConcern if Ecm::Blog.features?(:ecm_tags)
 
     # publishing
     include ActsAsPublished::ActiveRecord

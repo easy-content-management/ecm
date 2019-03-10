@@ -1,4 +1,5 @@
 require 'ecm/links/configuration'
+require 'ecm/links/engine'
 
 module Ecm
   module Links
@@ -9,3 +10,5 @@ module Ecm
     end
   end
 end
+
+Ecm.configure { |c| c.register_configuration(:links, Ecm::Links) }

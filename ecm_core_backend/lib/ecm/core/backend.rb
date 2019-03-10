@@ -8,3 +8,5 @@ module Ecm
     end
   end
 end
+
+Ecm.configure { |c| c.register_configuration(:core_backend, Ecm::Core::Backend) }

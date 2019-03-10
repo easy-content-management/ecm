@@ -10,12 +10,6 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
   ]
 
   {
-    # ActiveStorage::Attachment                => {},
-    # ActiveStorage::Blob                      => {},
-    # ActsAsTaggableOn::Tag                    => {},
-    # ActsAsTaggableOn::Tagging                => {},
-    # Delayed::Backend::ActiveRecord::Job      => {},
-
     Ecm::Blog::Post                          => {},
     Ecm::Blog::AssetDetail                   => {},
     Ecm::Cms::ContentBox                     => {},
@@ -26,7 +20,6 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     Ecm::Cms::Page::ContentBlock             => {},
     Ecm::Cms::Partial                        => {},
     Ecm::Cms::Template                       => {},
-    # Ecm::Comments::Comment                   => {},
     Ecm::Contact::ContactRequest             => {},
     Ecm::Files::FileDetail                   => {},
     Ecm::Files::Folder                       => {},
@@ -38,20 +31,9 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     Ecm::Rbac::Role                          => {},
     Ecm::Rbac::RolePermission                => {},
     Ecm::Rbac::UserRole                      => {},
-    # Ecm::Sliders::Item                       => {},
-    # Ecm::Sliders::Slider                     => {},
     Ecm::Tags::Tag                           => {},
     Ecm::Tags::Tagging                       => {},
-    # Ecm::Translations::Translation           => {},
     Ecm::UserArea::User                      => {},
-    # Vovinam::Category                        => {},
-    # Vovinam::Entry                           => {},
-    # Vovinam::Level                           => {},
-    # Vovinam::LevelTopic                      => {},
-    # Vovinam::Term                            => {},
-    # Vovinam::Topic                           => {},
-
-    # I18n::Backend::ActiveRecord::Translation => {},
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)
@@ -71,7 +53,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
       it 'is valid with correct attribute values' do
         instance = build(model.to_s.tableize.singularize.underscore.tr('/', '_'))
         
-        instance.valid?
+        binding.pry unless instance.valid?
         expect(instance.errors.full_messages).to eq([])
       end if specs.include?(:valid_with_correct_attributes)
 

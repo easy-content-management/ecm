@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", ">= 4.0.0"
+  s.add_dependency "ecm"
   s.add_dependency 'delayed_job_active_record'
   s.add_dependency 'request_store_rails'
   s.add_dependency 'route_translator'

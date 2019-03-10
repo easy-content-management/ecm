@@ -1,1 +1,0 @@
-Rails.application.config.assets.precompile += %w( ecm_sliders_backend.css ecm_sliders_backend.js )

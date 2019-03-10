@@ -44,9 +44,6 @@ Rails.application.routes.draw do
     mount Ecm::Tags::Backend::Engine, at: '/backend/ecm-tags-backend-engine'
   end
   localized do
-    mount Ecm::Sliders::Backend::Engine, at: '/backend/ecm-sliders-backend-engine'
-  end
-  localized do
     mount Ecm::Rbac::Backend::Engine, at: '/backend/ecm-rbac-backend-engine'
   end
   localized do

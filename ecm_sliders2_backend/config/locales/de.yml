@@ -1,5 +1,0 @@
-de:
-  classes:
-    ecm/sliders/backend/engine: 'Sliders'
-  routes:
-    ecm-sliders-backend-engine: 'sliders'

@@ -1,5 +1,0 @@
-
-
-  localized do
-    mount Ecm::Sliders::Backend::Engine, at: '/backend/ecm-sliders-backend-engine'
-  end

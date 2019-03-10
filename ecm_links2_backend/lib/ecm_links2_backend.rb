@@ -1,11 +1,4 @@
-# require 'ecm_core'
-require 'ecm_core_backend'
 require 'ecm_links2'
-# require 'coffee-rails'
-# require 'jquery-rails'
-# require 'rails-i18n'
-# require 'ransack'
-# require 'route_translator'
+require 'ecm_core_backend'
 
 require 'ecm/links/backend'
-require 'ecm/links/backend/engine'

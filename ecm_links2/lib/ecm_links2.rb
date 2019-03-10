@@ -7,5 +7,4 @@ require 'draper'
 require 'rao-view_helper'
 
 require 'ecm/links'
-require 'ecm/links/engine'
 

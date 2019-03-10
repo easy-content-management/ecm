@@ -9,11 +9,15 @@ module Ecm
           yield self
         end
 
-        mattr_accessor :registered_controllers do
+        mattr_accessor :resources_controllers do
           -> {[]}
         end
 
-        mattr_accessor :registered_services do
+        mattr_accessor :service_controllers do
+          -> {[]}
+        end
+
+        mattr_accessor :sidebar_controllers do
           -> {[]}
         end
       end

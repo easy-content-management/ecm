@@ -8,7 +8,7 @@ module Ecm
       include Rao::ResourcesController::KaminariConcern
       include Rao::ResourcesController::LocationHistoryConcern
 
-      helper Ecm::Comments::ApplicationHelper
+      helper Ecm::Comments::ApplicationHelper if Ecm::Blog.features?(:ecm_comments)
 
       def self.resource_class
         Ecm::Blog::Post

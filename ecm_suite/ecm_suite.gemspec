@@ -49,6 +49,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'ecm_user_area2_backend'
 
   s.add_development_dependency 'sqlite3', "~> 1.3.6"
+  s.add_development_dependency 'responders'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_bot_rails'

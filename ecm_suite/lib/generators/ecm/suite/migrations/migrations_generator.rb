@@ -8,6 +8,10 @@ module Ecm
           `rails active_storage:install:migrations`
         end
         
+        def generate_acts_as_taggable_on_migrations
+          `rails acts_as_taggable_on_engine:install:migrations`
+        end
+        
         def generate_migrations
           %w(blog carousels cms contact files galleries links rbac tags user_area).each do |m|
             `rails ecm_#{m}:install:migrations`
