@@ -10,7 +10,7 @@ FactoryBot.define do
       if Rails.version < "6.0.0"
         resource.asset = assets.first
       else
-        resource.asset = resource.post.assets.all.first
+        resource.asset = resource.post.assets.first
       end
     }
   end

@@ -56,4 +56,38 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
       .for(resource)
       .reducing{ resource_class.count }.by(1)
   }
+
+  describe 'appending asset details' do
+    let(:base_path) { '/de/backend/blog/posts' }
+    let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
+
+    let(:asset_detail) { create(:ecm_blog_asset_detail, post: resource) }
+
+    let(:submit_button) { within('form.edit_post') { first('input[type="submit"]') } }
+
+    before(:each) do
+      asset_detail
+      visit(edit_path)
+      attach_file 'post[append_assets][]', [Ecm::Blog::Engine.root.join(*%w(spec files ecm blog asset example.jpg))]
+    end
+
+    it { expect{ submit_button.click }.to change{ resource.asset_details.count }.from(1).to(2) }
+  end
+
+  describe 'replacing asset details' do
+    let(:base_path) { '/de/backend//blog/posts' }
+    let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
+
+    let(:asset_details) { create_list(:ecm_blog_asset_detail, 2, post: resource) }
+
+    let(:submit_button) { within('form.edit_post') { first('input[type="submit"]') } }
+
+    before(:each) do
+      asset_details
+      visit(edit_path)
+      attach_file 'post[overwrite_assets][]', [Ecm::Blog::Engine.root.join(*%w(spec files ecm blog asset example.jpg))]
+    end
+
+    it { expect{ submit_button.click }.to change{ resource.asset_details.count }.from(2).to(1) }
+  end
 end

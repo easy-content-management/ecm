@@ -11,7 +11,7 @@ module Ecm
         private
 
         def permitted_params
-          params.require(:folder).permit(:name, :description, :published, assets: [])
+          params.require(:folder).permit(:name, :description, :published, assets: [], append_assets: [], overwrite_assets: [])
         end
       end
     end

@@ -56,4 +56,38 @@ RSpec.describe '/de/backend/dateien/folders', type: :feature do
       .for(resource)
       .reducing{ resource_class.count }.by(1)
   }
+
+  describe 'appending item details' do
+    let(:base_path) { '/de/backend/dateien/folders' }
+    let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
+
+    let(:file_detail) { create(:ecm_files_file_detail, folder: resource) }
+
+    let(:submit_button) { within('form.edit_folder') { first('input[type="submit"]') } }
+
+    before(:each) do
+      file_detail
+      visit(edit_path)
+      attach_file 'folder[append_assets][]', [Ecm::Files::Engine.root.join(*%w(spec files ecm files file_details example.png))]
+    end
+
+    it { expect{ submit_button.click }.to change{ resource.file_details.count }.from(1).to(2) }
+  end
+
+  describe 'replacing item details' do
+    let(:base_path) { '/de/backend/dateien/folders' }
+    let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
+
+    let(:file_details) { create_list(:ecm_files_file_detail, 2, folder: resource) }
+
+    let(:submit_button) { within('form.edit_folder') { first('input[type="submit"]') } }
+
+    before(:each) do
+      file_details
+      visit(edit_path)
+      attach_file 'folder[overwrite_assets][]', [Ecm::Files::Engine.root.join(*%w(spec files ecm files file_details example.png))]
+    end
+
+    it { expect{ submit_button.click }.to change{ resource.file_details.count }.from(2).to(1) }
+  end
 end
