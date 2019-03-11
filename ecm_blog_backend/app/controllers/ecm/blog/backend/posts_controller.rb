@@ -41,7 +41,7 @@ module Ecm
         end
 
         def permitted_params
-          params.require(:post).permit(:title, :body, :published, :tag_list, assets: [])
+          params.require(:post).permit(:title, :body, :published, :tag_list, assets: [], append_assets: [], overwrite_assets: [])
         end
       end
     end

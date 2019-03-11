@@ -1,10 +1,10 @@
+require 'ecm_core'
 require 'acts-as-taggable-on'
 require 'haml-rails'
-require 'responders'
+# require 'responders'
 require 'simple_form'
 
 require 'ecm/tags'
-require 'ecm/tags/engine'
 
 # require 'acts_as_taggable_on/tag'
 # module ActsAsTaggableOn

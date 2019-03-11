@@ -1,4 +1,5 @@
 require 'ecm/user_area/backend/configuration'
+require 'ecm/user_area/backend/engine'
 
 module Ecm
   module UserArea
@@ -7,3 +8,5 @@ module Ecm
     end
   end
 end
+
+Ecm.configure { |c| c.register_configuration(:user_area_backend, Ecm::UserArea::Backend) }

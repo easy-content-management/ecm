@@ -16,6 +16,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 require "pry-rails"
 require "sqlite3"
+require "responders"
 require "ecm_suite"
 
 module Dummy

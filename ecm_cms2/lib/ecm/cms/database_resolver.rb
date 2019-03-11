@@ -56,15 +56,15 @@ module Ecm
         format   = record.format && Mime[record.format]
         format ||= handler.default_format if handler.respond_to?(:default_format)
         format ||= details[:formats]
-
         details = {
           format: format,
           updated_at: record.updated_at,
           virtual_path: "#{record.pathname}#{record.basename}"
         }
-
+        
         details[:layout] = record.layout if record.respond_to?(:layout) && record.layout.present?
-
+        
+        binding.pry
         ::ActionView::Template.new(source, identifier, handler, details)
       end
 

@@ -7,6 +7,7 @@ Ecm::UserArea::Backend::Engine.routes.draw do
   end
 
   resource :current_user, only: [:show]
+  resource :user_sidebar, only: [:show]
   
   root to: 'home#index'
 end

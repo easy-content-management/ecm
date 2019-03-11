@@ -16,13 +16,35 @@ module Ecm::Files
       assets.count
     end
 
-    module FileDetails
+    module FileDetailsConcern
       extend ActiveSupport::Concern
 
       included do
-        has_many :file_details, dependent: :destroy
+        has_many :file_details, inverse_of: :folder, dependent: :destroy, autosave: true
         before_validation :cleanup_orphaned_file_details
         before_validation :ensure_file_details
+      end
+
+      def append_assets
+        assets
+      end
+
+       def append_assets=(assets)
+          if Rails.version < '6.0.0'
+            self.assets = assets
+          else
+            self.assets.attach(assets)
+          end
+        end
+
+      def overwrite_assets
+        assets
+      end
+
+      def overwrite_assets=(assets)
+        return if assets.nil? || assets.empty?
+        self.file_details.map { |fd| fd.mark_for_destruction }
+        self.assets = assets
       end
 
       private
@@ -44,6 +66,6 @@ module Ecm::Files
       end
     end
 
-    include FileDetails
+    include FileDetailsConcern
   end
 end

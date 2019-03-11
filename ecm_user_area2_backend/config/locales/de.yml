@@ -6,3 +6,14 @@ de:
       never_signed_in: Niemals angemeldet
   routes:
     ecm-user-area-backend-engine: 'authentifizierung'
+  ecm:
+    user_area:
+      backend:
+        user_sidebars:
+          show:
+            signed_in_as: "Angemeldet als %{user}"
+            show: "Profil"
+            sign_out: "Abmelden"
+            not_signed_in: "Nicht angemeldet"
+            sign_in: "Anmelden"
+            new: "Registrieren"

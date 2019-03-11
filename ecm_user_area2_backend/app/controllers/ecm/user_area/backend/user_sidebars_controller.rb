@@ -1,6 +1,11 @@
 module Ecm
   module UserArea
-    class UserSideBarsController < Administrador::SidebarController::Base
+    module Backend
+      class UserSidebarsController < Administrador::SidebarController::Base
+        def self.icon_name
+          :user
+        end
+      end
     end
   end
 end

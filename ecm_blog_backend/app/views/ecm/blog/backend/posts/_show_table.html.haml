@@ -1,7 +1,8 @@
 = table.row :title
 = table.row :body
-= table.row(:tags) do |resource|
-  - tag_labels_for(resource)
+- if Ecm::Blog.features?(:ecm_tags)
+  = table.row(:tags) do |resource|
+    - tag_labels_for(resource)
 = table.association :creator, label_method: ->(r) { r.send(Ecm::Blog::Configuration.creator_label_method_name) }
 = table.association :updater, label_method: ->(r) { r.send(Ecm::Blog::Configuration.creator_label_method_name) }
 = table.timestamp :published_at, format: :short
