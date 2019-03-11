@@ -32,7 +32,11 @@ module Ecm
         end
 
         def append_assets=(assets)
-          self.assets = assets
+          if Rails.version < '6.0.0'
+            self.assets = assets
+          else
+            self.assets.attach(assets)
+          end
         end
 
         def overwrite_assets
